@@ -1,0 +1,143 @@
+.elemento {
+    display: flex;
+    background-color: #f0f8ff; 
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.elemento__titulo {
+    color: #00aaff; 
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.elemento__figura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.elemento__figura_imagen {
+    width: 30vw; 
+    max-width: 400px; 
+    margin-bottom: 1rem;
+    border-radius: 20px; 
+    border: 5px solid #00aaff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.elemento__figura_texto {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #00aaff; 
+}
+
+.elemento__boton {
+    font-family: 'Comic Sans MS', cursiva, sans-serif;
+    color: #00aaff; 
+    border: 3px solid #00aaff; 
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transforma 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.elemento__boton:hover {
+    background-color: #00aaff; 
+    color: white; 
+    transform: scale(1.1); 
+}
+
+.producto {
+    background-color: #f0f8ff; 
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.producto__titulo {
+    color: #00aaff; 
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.producto__card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem; 
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card__imagen {
+    width: 100%;
+    max-width: 150px; 
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.card__titulo {
+    color: #00aaff; 
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.card__precio {
+    color: #00aaff; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card__desc {
+    color: #0e1a26; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card__boton {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #00aaff; 
+    border: 3px solid #00aaff; 
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card__boton:hover {
+    background-color: #00aaff; 
+    color: white; 
+    transform: scale(1.1); 
+}
