@@ -6,38 +6,38 @@
     flex-direction: row;
     align-items: center;
     position: absolute;
-    border-bottom: 2px solid #ffcc00; /* Borde amarillo */
+    border-bottom: 2px solid #ffcc00;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #00aaff; /* Azul vibrante */
+    background-color: #00aaff; 
     justify-content: space-between;
     z-index: 1000;
 }
 
 .head__logo {
-    height: 60px; /* Tamaño más pequeño */
-    margin-left: 2rem; /* Espaciado a la izquierda */
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3)); /* Sombra para el logo */
+    height: 60px; 
+    margin-left: 2rem; 
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3)); 
 }
 
 .head__nav {
     text-align: center;
-    margin-right: 2rem; /* Espaciado a la derecha */
+    margin-right: 2rem;
 }
 
 .head__link {
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Tipografía divertida */
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
     display: inline-block;
-    margin: 0 1rem; /* Espaciado entre enlaces */
+    margin: 0 1rem; 
     color: white;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para el texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .head__link:hover {
-    color: #ffcc00; /* Amarillo al pasar el mouse */
-    transform: scale(1.1); /* Efecto de escala */
+    color: #ffcc00; 
+    transform: scale(1.1); 
 }
