@@ -49,6 +49,20 @@
     color: #ffcc00; 
     transform: scale(1.1); 
 }
+.nosotros__conteiner {
+    display: flex;
+    align-items: center;
+}
+
+.nosotros__contenido {
+    flex: 1;
+    padding-right: 20px;
+} 
+
+.nosotros__imagen {
+    max-width: 200px;
+    height: auto;
+}
 
 @media screen and (min-width: 750px) {
     .pagina {
