@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevenir acción por defecto</title>
+</head>
+<body>
+    <a id="enlace" href="https://www.facebook.com/help/668969529866328/?locale=es_LA">Enlace</a>
+    <script>
+        const enlace = document.getElementById('enlace');
+        enlace.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            alert('Enlace bloqueado');
+        });
+    </script>
+</body>
+</html>

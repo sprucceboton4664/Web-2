@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopProgation</title>
+</head>
+<body>
+    <div id="elementoPadre">
+        <div id="elementoHijo">elemento hijo</div>
+    </div>
+    <script>
+        const elementoHijo=document.getElementById('elementoHijo');
+        elementoHijo.addEventListener('click',(evento)=>(
+            elementoHijo.addEventListener('click',()=>{
+                alert('click en el hijo');
+            })
+        ))
+    </script>
+</body>
+</html>
