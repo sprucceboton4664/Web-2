@@ -1,4 +1,4 @@
-git push origin practica1   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es-mx">
 <head>
     <meta charset="UTF-8"> 
@@ -6,7 +6,6 @@ git push origin practica1   <!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio personal</title>
     <link rel="stylesheet" href="styles/styles.css">
-
 </head>
 <body>
     <header class="header">
@@ -21,28 +20,39 @@ git push origin practica1   <!DOCTYPE html>
                 Eleve tu negocio digital a otro nivel 
                 <strong class="titulo-destaque">con un Front-end de calidad!
                 </strong></h1>
-                <p class="presentacion__contenido__texto">¡Hola! Soy Ethan Zambrana un estudiante de univalle de 19 años</p>
-                <div class="presentacion__enlaces">
-                    <h2 class="presentacion__enlaces__subtitulo">Accede a mis redes</h2>
-                    <a class="presentacion__enlaces__link" href="https://github.com/">
-                        <img src="assets/github.png">
-                        Github
-                    </a>
-                    <a class="presentacion__enlaces__link" href="https://www.instagram.com/gonzaloethan?igsh=cG5kbHZhbmppbWVw"width>
-                        <img src="assets/inst.jpg " height="25" width="25">
-                        instagram
-                    </a>
-                    <a class="presentacion__enlaces__link" href="https://twitch.tv/">
-                        <img src="assets/twitch.png">
-                        Twitch
-                    </a>
-                </div>
-               
+            <p class="presentacion__contenido__texto" id="descripcion">¡Hola! Soy Ethan Zambrana un estudiante de univalle de 19 años</p>
+            <button id="cambiarTextoBtn">Cambiar Texto</button>
+            <button id="mostrarAlertaBtn">Mostrar Alerta</button>
+            <button id="reproducirSonidoBtn">Reproducir Sonido</button>
+            <div class="presentacion__enlaces">
+                <h2 class="presentacion__enlaces__subtitulo">Accede a mis redes</h2>
+                <a class="presentacion__enlaces__link" href="https://github.com/">
+                    <img src="assets/github.png">
+                    Github
+                </a>
+                <a class="presentacion__enlaces__link" href="https://www.instagram.com/gonzaloethan?igsh=cG5kbHZhbmppbWVw">
+                    <img src="assets/inst.jpg" height="25" width="25">
+                    Instagram
+                </a>
+                <a class="presentacion__enlaces__link" href="https://twitch.tv/">
+                    <img src="assets/twitch.png">
+                    Twitch
+                </a>
+            </div>
         </section>
-            <img class="foto1.jpg" src="assets/foto1.1.jpg" alt="Foto">
+        <img class="foto1" src="assets/foto1.1.jpg" alt="Foto" width="150" height="250" id="fotoPersonal">
+        <section class="tareas">
+            <h2>Lista de Tareas</h2>
+            <form id="formTareas">
+                <input type="text" id="nuevaTarea" placeholder="Agregar nueva tarea">
+                <button type="submit">Agregar</button>
+            </form>
+            <ul id="listaTareas"></ul>
+        </section>
     </main>
     <footer class="footer">
         <p>Desarrollado por Ethan Gonzalo Zambrana</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
