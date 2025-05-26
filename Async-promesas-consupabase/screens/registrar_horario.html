@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Horario - Cine</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Administración de Cine</h1>
+        <nav>
+            <a href="lista_peliculas.html">Películas</a>
+            <a href="lista_horarios.html">Horarios</a>
+            <a href="lista_boletos.html">Boletos</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-6">Registrar Nuevo Horario</h2>
+            
+            <form data-form class="form">
+                <div class="form-group">
+                    <label for="pelicula">Película</label>
+                    <select id="pelicula" data-pelicula required>
+                        <option value="">Selecciona una película</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" data-fecha required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hora">Hora</label>
+                    <input type="time" id="hora" data-hora required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sala">Sala</label>
+                    <select id="sala" data-sala required>
+                        <option value="">Selecciona una sala</option>
+                        <option value="1">Sala 1</option>
+                        <option value="2">Sala 2</option>
+                        <option value="3">Sala 3</option>
+                        <option value="4">Sala 4</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-primary">Registrar Horario</button>
+                    <button type="button" onclick="window.location.href='lista_horarios.html'" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../controllers/registro_horario_controller.js"></script>
+</body>
+</html>

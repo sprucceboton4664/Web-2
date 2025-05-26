@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Película - Cine</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Administración de Cine</h1>
+        <nav>
+            <a href="lista_peliculas.html">Películas</a>
+            <a href="lista_horarios.html">Horarios</a>
+            <a href="lista_boletos.html">Boletos</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-6">Actualizar Película</h2>
+            
+            <form data-form class="form">
+                <div class="form-group">
+                    <label for="titulo">Título de la Película</label>
+                    <input type="text" id="titulo" data-titulo required 
+                           placeholder="Ejemplo: Avatar: El sentido del agua">
+                </div>
+
+                <div class="form-group">
+                    <label for="duracion">Duración (minutos)</label>
+                    <input type="number" id="duracion" data-duracion required 
+                           placeholder="120">
+                </div>
+
+                <div class="form-group">
+                    <label for="genero">Género</label>
+                    <select id="genero" data-genero required>
+                        <option value="">Selecciona un género</option>
+                        <option value="Acción">Acción</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Comedia">Comedia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasía">Fantasía</option>
+                        <option value="Terror">Terror</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sinopsis">Sinopsis</label>
+                    <textarea id="sinopsis" data-sinopsis required 
+                              placeholder="Escribe una breve sinopsis de la película..." rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="imagen">URL de la Imagen</label>
+                    <input type="url" id="imagen" data-imagen required 
+                           placeholder="https://ejemplo.com/imagen.jpg">
+                    <img id="imagen-preview" src="" alt="Vista previa" class="mt-2 w-40 h-60 object-cover rounded">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-primary">Actualizar Película</button>
+                    <button type="button" onclick="window.location.href='lista_peliculas.html'" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../controllers/actualizar_pelicula_controller.js"></script>
+</body>
+</html>

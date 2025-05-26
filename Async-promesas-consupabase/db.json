@@ -1,0 +1,7 @@
+{
+  "titulo": "Ejemplo de Película",
+  "duracion": 120,
+  "genero": "Acción",
+  "sinopsis": "Esta es una película de ejemplo",
+  "imagen_url": "https://ejemplo.com/imagen.jpg"
+}

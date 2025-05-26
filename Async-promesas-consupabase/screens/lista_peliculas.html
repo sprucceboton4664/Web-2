@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas - CineMax</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../service/movie-service.js" type="module"></script>
+    <script src="../controllers/lista_peliculas_controller.js" type="module"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link { transition: all 0.3s ease; }
+        .nav-link:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn { transition: all 0.2s ease; }
+        .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .btn:active { transform: translateY(0); }
+        .card { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .btn-edit { background-color: #3b82f6; color: white; }
+        .btn-edit:hover { background-color: #2563eb; }
+        .btn-delete { background-color: #ef4444; color: white; }
+        .btn-delete:hover { background-color: #dc2626; }
+        .btn-primary { background-color: #4f46e5; color: white; }
+        .btn-primary:hover { background-color: #4338ca; }
+        .pelicula-card { transition: all 0.3s ease; }
+        .pelicula-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="h-full">
+    <div class="min-h-full">
+        <nav class="bg-indigo-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <span class="text-white font-bold text-xl">CineMax</span>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="lista_peliculas.html" class="nav-link bg-indigo-800 text-white px-3 py-2 rounded-md text-sm font-medium">
+                                    <i class="fas fa-film mr-1"></i> Películas
+                                </a>
+                                <a href="lista_horarios.html" class="nav-link text-gray-300 hover:bg-indigo-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                    <i class="far fa-clock mr-1"></i> Horarios
+                                </a>
+                                <a href="lista_boletos.html" class="nav-link text-gray-300 hover:bg-indigo-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                    <i class="fas fa-ticket-alt mr-1"></i> Boletos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <header class="bg-white shadow-sm">
+            <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-900">Catálogo de Películas</h1>
+                    <p class="text-sm text-gray-500 mt-1">Gestiona las películas disponibles en cartelera</p>
+                </div>
+                <button onclick="window.location.href='registrar_pelicula.html'" class="btn btn-primary px-4 py-2 rounded-md text-sm font-medium flex items-center">
+                    <i class="fas fa-plus mr-2"></i> Nueva Película
+                </button>
+            </div>
+        </header>
+        <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <div class="px-4 pb-4 sm:px-0 flex justify-between items-center">
+                <div class="relative w-64">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </div>
+                    <input type="text" id="search-input" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Buscar películas...">
+                </div>
+                <div class="flex space-x-2">
+                    <select id="filter-genre" class="block w-40 pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option value="">Todos los géneros</option>
+                        <option value="Acción">Acción</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Comedia">Comedia</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Terror">Terror</option>
+                    </select>
+                    <button class="btn-primary" onclick="window.location.href='registrar_pelicula.html'">
+                        <svg class="w-5 h-5 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                        Agregar Película
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-container overflow-x-auto">
+                <table class="table w-full">
+                    <thead>
+                        <tr>
+                            <th class="w-60 pelicula-img-cell">Portada</th>
+                            <th>Título</th>
+                            <th>Duración</th>
+                            <th>Género</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="peliculas-list">
+                    </tbody>
+                </table>
+            </div>
+
+            <style>
+                .btn-edit {
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 4px;
+                }
+
+                .btn-delete {
+                    background-color: #f44336;
+                    color: white;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 4px;
+                }
+
+                .btn-edit:hover {
+                    background-color: #45a049;
+                }
+
+                .btn-delete:hover {
+                    background-color: #da190b;
+                }
+
+                .btn-edit svg,
+                .btn-delete svg {
+                    width: 16px;
+                    height: 16px;
+                }
+                .pelicula-img {
+                    width: 225px !important;
+                    height: 225px !important;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    transition: transform 0.2s;
+                }
+
+                .pelicula-img:hover {
+                    transform: scale(1.05);
+                }
+
+                .pelicula-img-cell {
+                    min-width: 240px !important;
+                }
+                th[data-title] {
+                    min-width: 200px;
+                }
+                .table {
+                    width: 100% !important;
+                }
+            </style>
+            <div id="details-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+                <div class="fixed inset-0 flex items-center justify-center">
+                    <div class="bg-white rounded-lg p-6 w-96">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">Detalles de la Película</h3>
+                            <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="modal-content">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="../controllers/lista_peliculas_controller.js"></script>
+</body>
+</html>                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script type="module" src="../controllers/lista_peliculas_controller.js"></script>
+</body>
+</html>
